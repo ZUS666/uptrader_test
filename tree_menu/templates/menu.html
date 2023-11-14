@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <header>
+        {% include 'header.html' %}
+    </header>
+    {% for menu in menus %}
+        <p>
+            {% if menu.down %}
+            <a href="{% url "detail_menu" menu.name %}", role="button">
+                {{ menu.name }}
+            </a>
+            {% else %}
+            {{ menu.name }}
+            {% endif %}
+        </p>
+    {% endfor %}
+</body>
+</html>
